@@ -291,12 +291,28 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
 .cbar-val{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text);text-align:right}
 .cbar-val.gold{color:var(--gold)}
 
+/* ===== FAQ ===== */
+.faq-section{padding:100px 60px;max-width:1200px;margin:0 auto}
+.faq-grid{margin-top:60px;display:flex;flex-direction:column;gap:2px}
+.faq-item{border:1px solid var(--gold-dim);border-radius:2px;overflow:hidden;transition:border-color .3s}
+.faq-item:hover{border-color:rgba(201,168,76,.35)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;cursor:pointer;user-select:none}
+.faq-q h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text);margin:0;line-height:1.3}
+.faq-icon{font-family:'Space Mono',monospace;font-size:18px;color:var(--gold);flex-shrink:0;margin-left:20px;transition:transform .3s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:400px}
+.faq-a p{padding:0 28px 24px;font-size:15px;font-weight:300;color:var(--muted);line-height:1.85;margin:0}
+.faq-a p strong{color:var(--text);font-weight:600}
+
 @media(max-width:900px){
   .calc-wrap{grid-template-columns:1fr;padding:32px 24px}
   .calc-section{padding:60px 24px}
   .compare-inner{padding:0 24px}
   .cbar{grid-template-columns:110px 1fr 80px}
   .cbar-label{font-size:9px}
+  .faq-section{padding:60px 24px}
+  .faq-q h4{font-size:15px}
 }
 </style>
 </head>
@@ -317,8 +333,8 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#how">Strategy</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Call</a></li>
   </ul>
 </nav>
 
@@ -753,14 +769,68 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section reveal" id="faq">
+  <div class="section-tag">Common Questions</div>
+  <h2 class="section-title">What Governance<br>Teams Ask Us.</h2>
+  <p class="section-sub">The questions we hear from every DAO before they engage — answered honestly.</p>
+
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>How does the multi-sig work — do you control our funds?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a"><p>No. Funds never leave your DAO's control without a co-signed transaction. All deployments use a jointly-controlled multi-sig where your governance delegates hold co-signing keys. AVC cannot move capital unilaterally. <strong>You can revoke access and withdraw at any time.</strong></p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>What's your fee structure?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a"><p>We charge no management fee on initial pilots. Our fee is <strong>10–15% of yield generated</strong> — we only earn when your treasury earns. If a $10M allocation generates $800K in annual yield, AVC takes $80–120K. If it generates nothing, we take nothing.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>What happens if we want to exit?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a"><p>Full exit with <strong>7 days notice</strong>. We only deploy into liquid positions — Aave, Morpho, and Ondo USDY can all be unwound within hours. There are no lock-ups, lockout periods, or exit penalties. Your community is never trapped.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>How does this go through our governance process?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a"><p>We draft everything. AVC submits a governance post → Temperature Check (Snapshot) → Formal On-chain Proposal. We attend community calls, answer delegate questions, and provide all supporting data. <strong>The community votes — we never bypass governance.</strong> Typical timeline: 30–45 days from first contact to live deployment.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>What are the smart contract risks?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a"><p>Real and worth taking seriously. We only deploy into <strong>battle-tested, multiply-audited protocols</strong> — Aave (7+ years, $10B+ TVL), Morpho (audited by Spearbit + Cantina), and Ondo Finance (SEC-registered, US T-bill backed). We maintain a 10% cash reserve at all times as a liquidity buffer. No experimental protocols, no leverage, no derivatives.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>Can we start with a smaller pilot before committing larger capital?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a"><p>Yes — and we recommend it. A <strong>$1–5M pilot allocation</strong> for 90 days lets your governance community see exactly how we operate before committing larger capital. Full on-chain reporting throughout. The pilot governance proposal is simpler and faster to pass than a full mandate.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- 12. CTA -->
 <section class="cta-section reveal" id="contact">
   <div class="section-tag">Get Started</div>
   <h2>Ready to Put Your<br>Treasury to Work?</h2>
-  <p>We start with a free treasury audit. No commitment. No governance proposal until you're ready.</p>
-  <div class="hero-btns" style="justify-content:center;">
-    <a href="mailto:invest@augustventurecapital.io" class="btn-primary">Request a Treasury Audit</a>
-    <a href="mailto:invest@augustventurecapital.io" class="btn-secondary">Schedule a Call</a>
+  <p>Start with a free 30-minute treasury audit call. No commitment — just an honest look at what your treasury could earn.</p>
+  <div class="hero-btns" style="justify-content:center;gap:20px;">
+    <a href="https://calendly.com/augustventurecapital" target="_blank" class="btn-primary" style="display:inline-flex;align-items:center;gap:10px;">
+      <span>📅</span> Book a 30-Min Call
+    </a>
+    <a href="mailto:invest@augustventurecapital.io" class="btn-secondary">invest@augustventurecapital.io</a>
   </div>
 </section>
 
@@ -976,6 +1046,18 @@ function animateStats(){
     var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){animate();o.disconnect()}},{threshold:.3});
     o.observe(chart);
   }else{animate()}
+})();
+
+// ===== FAQ ACCORDION =====
+(function(){
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = this.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){ o.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
 })();
 
 // ===== LIVE BLOCK COUNTER =====
