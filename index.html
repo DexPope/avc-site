@@ -20,8 +20,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
 /* HEX BACKGROUND */
-.hex-bg{position:fixed;inset:0;z-index:0;pointer-events:none}
-.hex-bg svg{width:100%;height:100%}
+#hex-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;}
 
 /* NODE CANVAS */
 #network-canvas{position:fixed;inset:0;z-index:1;pointer-events:none}
@@ -54,15 +53,15 @@ nav.scrolled{background:rgba(5,5,5,.88);backdrop-filter:blur(24px);-webkit-backd
 .nav-cta:hover{background:var(--gold)!important;color:#000!important;border-color:var(--gold)!important}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 40px 120px;position:relative;overflow:hidden}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;padding:140px 80px 120px;position:relative;overflow:hidden;max-width:1400px;margin:0 auto;width:100%}
 .hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(201,168,76,.04) 0%,transparent 65%);pointer-events:none;z-index:0}
 .hero>*{position:relative;z-index:1}
 .hero-label{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:4px;text-transform:uppercase;margin-bottom:36px;opacity:0;animation:fadeUp .8s ease .2s forwards}
-.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(52px,8vw,96px);font-style:italic;font-weight:500;color:var(--text);line-height:1.08;letter-spacing:-1px;margin-bottom:32px;max-width:860px;opacity:0;animation:fadeUp .9s ease .4s forwards}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(60px,9vw,120px);font-style:italic;font-weight:600;color:var(--text);line-height:1.05;letter-spacing:-2px;margin-bottom:32px;max-width:900px;opacity:0;animation:fadeUp .9s ease .4s forwards}
 .hero-headline em{font-style:italic;color:var(--gold-light)}
-.hero-rule{width:120px;height:1px;background:var(--gold);margin:0 auto 32px;opacity:0;animation:fadeIn .8s ease .7s forwards}
+.hero-rule{width:120px;height:1px;background:var(--gold);margin:0 0 32px;opacity:0;animation:fadeIn .8s ease .7s forwards}
 .hero-sub{font-size:clamp(15px,1.8vw,18px);font-weight:300;color:var(--muted);max-width:600px;margin-bottom:52px;line-height:1.8;opacity:0;animation:fadeUp .9s ease .8s forwards}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp .8s ease 1s forwards}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-start;opacity:0;animation:fadeUp .8s ease 1s forwards}
 .hero-chip{position:absolute;bottom:48px;left:60px;display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.5px;opacity:0;animation:fadeIn 1s ease 1.4s forwards}
 .chip-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;box-shadow:0 0 8px var(--green);animation:chipPulse 2.4s ease infinite}
 @keyframes chipPulse{0%,100%{opacity:1;box-shadow:0 0 8px var(--green)}50%{opacity:.5;box-shadow:0 0 3px var(--green)}}
@@ -252,17 +251,7 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
 <body>
 
 <!-- HEX GRID BACKGROUND -->
-<div class="hex-bg">
-  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-    <defs>
-      <pattern id="hex" width="56" height="97" patternUnits="userSpaceOnUse" patternTransform="scale(1.2)">
-        <path d="M28,2 L54,17 L54,48 L28,63 L2,48 L2,17 Z" fill="none" stroke="rgba(201,168,76,0.05)" stroke-width="0.5"/>
-        <path d="M28,51 L54,66 L54,97 L28,112 L2,97 L2,66 Z" fill="none" stroke="rgba(201,168,76,0.05)" stroke-width="0.5" transform="translate(28,-48.5)"/>
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#hex)"/>
-  </svg>
-</div>
+<canvas id="hex-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%;"></canvas>
 
 <!-- NODE NETWORK CANVAS -->
 <canvas id="network-canvas"></canvas>
@@ -282,6 +271,7 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
 </nav>
 
 <!-- HERO -->
+<div style="position:relative;z-index:2;width:100%;">
 <div class="hero">
   <div class="hero-label">Est. 2026 — Houston, Texas</div>
   <h1 class="hero-headline">Where Capital<br>Finds <em>Purpose.</em></h1>
@@ -295,6 +285,7 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
     <span class="chip-dot"></span>
     treasury.avc.eth // Block: 19,847,231
   </div>
+</div>
 </div>
 
 <!-- STATS BAR -->
@@ -669,6 +660,47 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
 </footer>
 
 <script>
+// ===== HEX GRID CANVAS =====
+(function(){
+  var hc = document.getElementById('hex-canvas');
+  if(!hc) return;
+  var ctx = hc.getContext('2d');
+  var R = 28; // circumradius (center to vertex)
+
+  function draw(){
+    var W = hc.width = window.innerWidth;
+    var H = hc.height = window.innerHeight;
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle = 'rgba(201,168,76,0.065)';
+    ctx.lineWidth = 1;
+
+    var colW = Math.sqrt(3) * R;   // pointy-top: width between column centers
+    var rowH = R * 1.5;            // vertical step between row centers
+
+    var cols = Math.ceil(W / colW) + 3;
+    var rows = Math.ceil(H / rowH) + 3;
+
+    for(var row = -1; row <= rows; row++){
+      for(var col = -1; col <= cols; col++){
+        var cx = col * colW + (row % 2 !== 0 ? colW / 2 : 0);
+        var cy = row * rowH;
+        ctx.beginPath();
+        for(var i = 0; i < 6; i++){
+          var a = Math.PI / 3 * i + Math.PI / 2;
+          var x = cx + R * Math.cos(a);
+          var y = cy + R * Math.sin(a);
+          i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+      }
+    }
+  }
+
+  draw();
+  window.addEventListener('resize', draw);
+})();
+
 // ===== NODE NETWORK ANIMATION (FULL PAGE) =====
 (function(){
   var canvas = document.getElementById('network-canvas');
