@@ -247,6 +247,7 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
   .treasury-metrics{grid-template-columns:1fr}
 }
 </style>
+</style>
 </head>
 <body>
 
@@ -321,7 +322,25 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
   </div>
 </div>
 
-<!-- WHAT WE DO -->
+<!-- RESEARCH -->
+<div class="research-section-wrap reveal" id="research">
+  <div class="research-inner">
+    <div class="section-tag">Research</div>
+    <h2 class="section-title">We Publish.<br>You Decide.</h2>
+    <p class="section-sub">AVC is building a research practice on DAO treasury performance, yield opportunities, and capital strategy — open to the community.</p>
+
+    <div class="research-card">
+      <div class="research-left">
+        <div class="research-badge">Coming Soon — Q2 2026</div>
+        <h3>The $600M Problem: Why Compound Finance's Treasury Is Underperforming</h3>
+        <p>A deep dive into Compound's treasury composition, idle capital allocation, and the yield opportunity being left on the table — with a concrete proposal for what governance could do about it.</p>
+      </div>
+      <div class="research-arrow">→</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO + WHY AVC (combined) -->
 <section class="sec-wrap reveal" id="services">
   <div class="section-tag">What We Do</div>
   <h2 class="section-title">One Active Service. A Roadmap Built to Scale.</h2>
@@ -350,38 +369,54 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
       <div class="service-return">↗ Target: 4–6% spread on $10M+ pools</div>
     </div>
   </div>
-</section>
 
-<!-- TARGET PROTOCOLS -->
-<section class="sec-wrap reveal" id="protocols">
-  <div class="section-tag">Initial Coverage Universe</div>
-  <h2 class="section-title">Starting Where<br>the Capital Is.</h2>
-  <p class="section-sub">AVC's first engagement targets are protocols with large, idle treasuries and governance communities ready for institutional-grade yield management.</p>
-
-  <div class="protocols-grid stagger-children">
-    <div class="card">
-      <div class="protocol-badge">DeFi Lending</div>
-      <h3 class="protocol-name">Compound Finance</h3>
-      <div class="protocol-treasury">~$600M</div>
-      <p>One of DeFi's oldest protocols with a large, largely idle treasury — and a governance community that has explored professional management.</p>
-    </div>
-    <div class="card">
-      <div class="protocol-badge">L2 Ecosystem</div>
-      <h3 class="protocol-name">Arbitrum DAO</h3>
-      <div class="protocol-treasury">~$3B</div>
-      <p>The largest L2 treasury in DeFi, with growing interest in sustainable yield generation to fund ecosystem grants and operations.</p>
-    </div>
-    <div class="card">
-      <div class="protocol-badge">DEX Protocol</div>
-      <h3 class="protocol-name">Uniswap DAO</h3>
-      <div class="protocol-treasury">~$3.5B</div>
-      <p>The world's leading DEX holds a massive UNI treasury with minimal yield — a prime candidate for diversified, non-custodial deployment.</p>
-    </div>
-    <div class="card">
-      <div class="protocol-badge">NFT / DAO</div>
-      <h3 class="protocol-name">Nouns DAO</h3>
-      <div class="protocol-treasury">~$50M</div>
-      <p>A high-profile, fully on-chain DAO with ETH-denominated treasury and an active governance culture aligned with transparent management.</p>
+  <!-- WHY AVC — Our Commitments -->
+  <div style="margin-top:80px;">
+    <div class="section-tag" style="margin-bottom:16px;">Our Commitments</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:600;color:var(--text);margin-bottom:40px;">Built Different.</h3>
+    <div class="why-grid stagger-children">
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Performance-Based Fees Only</h4>
+          <p>We don't charge management fees on pilots. We earn when your treasury earns. Incentives aligned from day one.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>100% On-Chain Transparency</h4>
+          <p>Every position, every transaction, every yield payment is visible on-chain in real time. No black boxes.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Multi-Sig Controlled</h4>
+          <p>Your funds are never in our sole custody. All deployments require multi-sig approval with your delegates as co-signers.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Governance-Native</h4>
+          <p>We work through your governance process — not around it. Every strategy change requires a community vote.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Audited Protocol Stack</h4>
+          <p>We only deploy into battle-tested, audited protocols — Aave, Morpho, Ondo Finance, and Compound.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Exit Anytime</h4>
+          <p>Full liquidity with 7-day notice. Your community is never locked in. We earn trust, not lock-ups.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -418,58 +453,6 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
   </div>
 </div>
 
-<!-- WHY AVC -->
-<section class="sec-wrap reveal">
-  <div class="section-tag">Why AVC</div>
-  <h2 class="section-title">Built Different.</h2>
-  <p class="section-sub">Most DAOs don't have a Goldman Sachs. We're building one for the on-chain world.</p>
-
-  <div class="why-grid stagger-children">
-    <div class="why-item">
-      <div class="why-check">✓</div>
-      <div>
-        <h4>Performance-Based Fees Only</h4>
-        <p>We don't charge management fees on pilots. We earn when your treasury earns. Incentives aligned from day one.</p>
-      </div>
-    </div>
-    <div class="why-item">
-      <div class="why-check">✓</div>
-      <div>
-        <h4>100% On-Chain Transparency</h4>
-        <p>Every position, every transaction, every yield payment is visible on-chain in real time. No black boxes.</p>
-      </div>
-    </div>
-    <div class="why-item">
-      <div class="why-check">✓</div>
-      <div>
-        <h4>Multi-Sig Controlled</h4>
-        <p>Your funds are never in our sole custody. All deployments require multi-sig approval with your delegates as co-signers.</p>
-      </div>
-    </div>
-    <div class="why-item">
-      <div class="why-check">✓</div>
-      <div>
-        <h4>Governance-Native</h4>
-        <p>We work through your governance process — not around it. Every strategy change requires a community vote.</p>
-      </div>
-    </div>
-    <div class="why-item">
-      <div class="why-check">✓</div>
-      <div>
-        <h4>Audited Protocol Stack</h4>
-        <p>We only deploy into battle-tested, audited protocols — Aave, Morpho, Ondo Finance, and Compound.</p>
-      </div>
-    </div>
-    <div class="why-item">
-      <div class="why-check">✓</div>
-      <div>
-        <h4>Exit Anytime</h4>
-        <p>Full liquidity with 7-day notice. Your community is never locked in. We earn trust, not lock-ups.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- LUMA VIDEO SECTION -->
 <div class="video-section">
   <video autoplay muted loop playsinline>
@@ -483,45 +466,11 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
   </div>
 </div>
 
-<!-- TEAM -->
-<section class="sec-wrap team-section reveal" id="team">
-  <div class="section-tag">The Team</div>
-  <h2 class="section-title">Operator-Led.<br>Onchain-Native.</h2>
-  <p class="section-sub" style="margin:0 auto;">We bring real-world operator discipline to onchain capital management — no theory, no fluff.</p>
-
-  <div class="team-card-wrap">
-    <div class="team-card">
-      <div class="team-avatar">RW</div>
-      <h3>Rich Winter</h3>
-      <div class="team-title">Founder &amp; Managing Partner</div>
-      <p>Founder of August Aisles LLC — a Houston-based operating company spanning AI automation, telehealth access, and pharmaceutical distribution. Bringing operator discipline to onchain capital management.</p>
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH -->
-<div class="research-section-wrap reveal" id="research">
-  <div class="research-inner">
-    <div class="section-tag">Research</div>
-    <h2 class="section-title">We Publish.<br>You Decide.</h2>
-    <p class="section-sub">AVC is building a research practice on DAO treasury performance, yield opportunities, and capital strategy — open to the community.</p>
-
-    <div class="research-card">
-      <div class="research-left">
-        <div class="research-badge">Coming Soon — Q2 2026</div>
-        <h3>The $600M Problem: Why Compound Finance's Treasury Is Underperforming</h3>
-        <p>A deep dive into Compound's treasury composition, idle capital allocation, and the yield opportunity being left on the table — with a concrete proposal for what governance could do about it.</p>
-      </div>
-      <div class="research-arrow">→</div>
-    </div>
-  </div>
-</div>
-
-<!-- ALLOCATION STRATEGY -->
+<!-- ALLOCATION + TREASURY DASHBOARD (combined) -->
 <div class="allocation-section reveal" id="allocation">
   <div class="allocation-inner">
     <div class="alloc-left">
-      <div class="section-tag">Default Allocation</div>
+      <div class="section-tag">Capital Strategy</div>
       <h2 class="section-title">Conservative.<br>Yield-Optimized.</h2>
       <div class="donut-wrap">
         <svg id="donut-chart" viewBox="0 0 200 200" width="260" height="260" style="overflow:visible;display:block;">
@@ -569,66 +518,80 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
         <span>6–12%</span>
         <span>Blended APY<br>Target (Annual)</span>
       </div>
+
+      <!-- TREASURY DASHBOARD MOCKUP — embedded in right column -->
+      <div style="margin-top:48px;">
+        <div class="section-tag" style="margin-bottom:20px;">What Reporting Looks Like</div>
+        <p style="font-size:14px;font-weight:300;color:var(--muted);margin-bottom:24px;line-height:1.7;">Every deployed position is reported publicly on-chain. No black boxes. No excuses.</p>
+        <div class="treasury-panel" style="max-width:100%;margin:0;">
+          <div class="treasury-panel-header">
+            <div class="treasury-panel-title">AVC Treasury Report — Week 12</div>
+            <div class="treasury-live-badge">● Live</div>
+          </div>
+          <div class="treasury-metrics">
+            <div class="treasury-metric-card">
+              <div class="treasury-metric-label">Total Deployed</div>
+              <div class="treasury-metric-value">$4.2M</div>
+            </div>
+            <div class="treasury-metric-card">
+              <div class="treasury-metric-label">Weekly Yield</div>
+              <div class="treasury-metric-value">$8,400</div>
+            </div>
+            <div class="treasury-metric-card">
+              <div class="treasury-metric-label">APY</div>
+              <div class="treasury-metric-value">10.4%</div>
+            </div>
+          </div>
+          <table class="treasury-table">
+            <thead>
+              <tr>
+                <th>Protocol / Asset</th>
+                <th>Deployed</th>
+                <th>APY</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ondo USDY</td>
+                <td class="td-amount">$1.68M</td>
+                <td class="td-apy">5.2% APY</td>
+                <td class="td-status">✓ Active</td>
+              </tr>
+              <tr>
+                <td>Aave v3 USDC</td>
+                <td class="td-amount">$1.26M</td>
+                <td class="td-apy">8.1% APY</td>
+                <td class="td-status">✓ Active</td>
+              </tr>
+              <tr>
+                <td>Morpho USDC</td>
+                <td class="td-amount">$840K</td>
+                <td class="td-apy">12.3% APY</td>
+                <td class="td-status">✓ Active</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="treasury-footer-note">Reports published on-chain every Monday. Viewable by any token holder.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- TREASURY DASHBOARD MOCKUP -->
-<section class="treasury-section reveal">
-  <div class="section-tag">What Reporting Looks Like</div>
-  <h2 class="section-title">Full Transparency. Every Week.</h2>
-  <p class="section-sub" style="margin:0 auto;">Every deployed position is reported publicly on-chain. No black boxes. No excuses.</p>
+<!-- TEAM -->
+<section class="sec-wrap team-section reveal" id="team">
+  <div class="section-tag">The Team</div>
+  <h2 class="section-title">Operator-Led.<br>Onchain-Native.</h2>
+  <p class="section-sub" style="margin:0 auto;">We bring real-world operator discipline to onchain capital management — no theory, no fluff.</p>
 
-  <div class="treasury-panel">
-    <div class="treasury-panel-header">
-      <div class="treasury-panel-title">AVC Treasury Report — Week 12</div>
-      <div class="treasury-live-badge">● Live</div>
+  <div class="team-card-wrap">
+    <div class="team-card">
+      <div class="team-avatar">RW</div>
+      <h3>Rich Winter</h3>
+      <div class="team-title">Founder &amp; Managing Partner</div>
+      <p>Founder of August Aisles LLC — a Houston-based operating company spanning AI automation, telehealth access, and pharmaceutical distribution. Bringing operator discipline to onchain capital management.</p>
     </div>
-    <div class="treasury-metrics">
-      <div class="treasury-metric-card">
-        <div class="treasury-metric-label">Total Deployed</div>
-        <div class="treasury-metric-value">$4.2M</div>
-      </div>
-      <div class="treasury-metric-card">
-        <div class="treasury-metric-label">Weekly Yield</div>
-        <div class="treasury-metric-value">$8,400</div>
-      </div>
-      <div class="treasury-metric-card">
-        <div class="treasury-metric-label">APY</div>
-        <div class="treasury-metric-value">10.4%</div>
-      </div>
-    </div>
-    <table class="treasury-table">
-      <thead>
-        <tr>
-          <th>Protocol / Asset</th>
-          <th>Deployed</th>
-          <th>APY</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Ondo USDY</td>
-          <td class="td-amount">$1.68M</td>
-          <td class="td-apy">5.2% APY</td>
-          <td class="td-status">✓ Active</td>
-        </tr>
-        <tr>
-          <td>Aave v3 USDC</td>
-          <td class="td-amount">$1.26M</td>
-          <td class="td-apy">8.1% APY</td>
-          <td class="td-status">✓ Active</td>
-        </tr>
-        <tr>
-          <td>Morpho USDC</td>
-          <td class="td-amount">$840K</td>
-          <td class="td-apy">12.3% APY</td>
-          <td class="td-status">✓ Active</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="treasury-footer-note">Reports published on-chain every Monday. Viewable by any token holder.</div>
   </div>
 </section>
 
@@ -637,7 +600,7 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
   <div class="section-tag">Get Started</div>
   <h2>Ready to Put Your<br>Treasury to Work?</h2>
   <p>We start with a free treasury audit. No commitment. No governance proposal until you're ready.</p>
-  <div class="hero-btns">
+  <div class="hero-btns" style="justify-content:center;">
     <a href="mailto:invest@augustventurecapital.io" class="btn-primary">Request a Treasury Audit</a>
     <a href="mailto:invest@augustventurecapital.io" class="btn-secondary">Schedule a Call</a>
   </div>
@@ -651,7 +614,7 @@ footer{background:var(--surface);border-top:1px solid var(--border-dim);padding:
   </div>
   <ul class="footer-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#protocols">Protocols</a></li>
+    <li><a href="#research">Research</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="mailto:invest@augustventurecapital.io">Contact</a></li>
