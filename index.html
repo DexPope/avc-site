@@ -886,6 +886,249 @@
     color: #444;
   }
 
+  /* PROTOCOL TRUST BAR */
+  .protocol-trust-bar {
+    background: #0d0d0d;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 28px 60px;
+    text-align: center;
+  }
+  .ptb-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .ptb-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .ptb-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(255,255,255,0.35);
+    transition: color 0.3s;
+    cursor: default;
+    user-select: none;
+  }
+  .ptb-logo:hover { color: rgba(201,168,76,0.8); }
+  .ptb-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* DONUT CHART */
+  .donut-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 28px;
+  }
+  .donut-seg {
+    transition: stroke-dasharray 1.2s cubic-bezier(0.4,0,0.2,1);
+  }
+  .donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 260px;
+  }
+  .donut-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .donut-legend-item span {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+  .donut-legend-item strong {
+    margin-left: auto;
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  /* TREASURY DASHBOARD */
+  .treasury-section {
+    padding: 100px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .treasury-panel {
+    background: #0d0d0d;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 900px;
+    margin: 48px auto 0;
+    text-align: left;
+  }
+  .treasury-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .treasury-panel-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .treasury-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,200,100,0.12);
+    border: 1px solid rgba(0,200,100,0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #00c864;
+  }
+  .treasury-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .treasury-metric-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .treasury-metric-label {
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .treasury-metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .treasury-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  .treasury-table th {
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .treasury-table td {
+    padding: 14px 12px;
+    font-size: 14px;
+    color: var(--text);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .treasury-table tr:last-child td { border-bottom: none; }
+  .treasury-table td.td-amount {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .treasury-table td.td-apy { color: var(--gold); font-weight: 600; }
+  .treasury-table td.td-status { color: #00c864; font-weight: 600; }
+  .treasury-footer-note {
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  /* VIDEO SECTION */
+  .video-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-section video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+  }
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.55) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    padding: 40px;
+  }
+  .video-mask-left {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 140px;
+    background: linear-gradient(to right, #080808, transparent);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .video-mask-right {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 140px;
+    background: linear-gradient(to left, #080808, transparent);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .video-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .video-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
@@ -937,7 +1180,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <canvas class="hero-canvas" id="network-canvas" style="pointer-events:none;"></canvas>
   <div class="hero-tag">On-Chain Treasury Intelligence</div>
   <h1>Treasury Intelligence<br>for the <span>Onchain Economy</span></h1>
   <p>AVC partners with DAOs and protocols to transform idle treasury assets into institutional-grade yield — transparently, non-custodially, and fully on-chain.</p>
@@ -964,6 +1207,31 @@
   <div class="stat">
     <div class="stat-num">0</div>
     <div class="stat-label">Custody Risk (Non-Custodial)</div>
+  </div>
+</div>
+
+<!-- PROTOCOL TRUST BAR -->
+<div class="protocol-trust-bar">
+  <div class="ptb-label">Protocols We Deploy Into</div>
+  <div class="ptb-logos">
+    <span class="ptb-logo">
+      <span class="ptb-dot" style="background:#B6509E;"></span>Aave
+    </span>
+    <span class="ptb-logo">
+      <span class="ptb-dot" style="background:#00D395;"></span>Compound
+    </span>
+    <span class="ptb-logo">
+      <span class="ptb-dot" style="background:#4A90D9;"></span>Morpho
+    </span>
+    <span class="ptb-logo">
+      <span class="ptb-dot" style="background:#7B61FF;"></span>Ondo Finance
+    </span>
+    <span class="ptb-logo">
+      <span class="ptb-dot" style="background:#28A0F0;"></span>Arbitrum
+    </span>
+    <span class="ptb-logo">
+      <span class="ptb-dot" style="background:#FF007A;"></span>Uniswap
+    </span>
   </div>
 </div>
 
@@ -1116,6 +1384,19 @@
   </div>
 </section>
 
+<!-- LUMA VIDEO SECTION -->
+<div class="video-section">
+  <video autoplay muted loop playsinline>
+    <!-- LUMA_VIDEO_SRC -->
+  </video>
+  <div class="video-mask-left"></div>
+  <div class="video-mask-right"></div>
+  <div class="video-overlay">
+    <div class="video-tag">The Onchain Economy</div>
+    <div class="video-headline">Capital Without Borders.</div>
+  </div>
+</div>
+
 <!-- TEAM -->
 <section class="team-section" id="team">
   <div class="section-tag">The Team</div>
@@ -1156,26 +1437,48 @@
     <div class="alloc-left">
       <div class="section-tag">Default Allocation</div>
       <h2 class="section-title">Conservative.<br>Yield-Optimized.</h2>
-      <div class="alloc-list">
-        <div class="alloc-item">
-          <span class="alloc-label">Tokenized T-Bills (Ondo)</span>
-          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:40%"></div></div>
-          <span class="alloc-pct">40%</span>
-        </div>
-        <div class="alloc-item">
-          <span class="alloc-label">Aave v3 Lending</span>
-          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:30%"></div></div>
-          <span class="alloc-pct">30%</span>
-        </div>
-        <div class="alloc-item">
-          <span class="alloc-label">Morpho Optimized</span>
-          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:20%"></div></div>
-          <span class="alloc-pct">20%</span>
-        </div>
-        <div class="alloc-item">
-          <span class="alloc-label">Strategic Reserve</span>
-          <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:10%"></div></div>
-          <span class="alloc-pct">10%</span>
+      <div class="donut-wrap">
+        <!-- Circumference = 2π×70 ≈ 439.82 -->
+        <svg id="donut-chart" viewBox="0 0 200 200" width="260" height="260" style="overflow:visible;display:block;">
+          <!-- Background ring -->
+          <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="26"/>
+          <!-- Segment 1: Tokenized T-Bills 40% (#c9a84c) — start=0, len=175.93, offset=0 -->
+          <circle class="donut-seg" cx="100" cy="100" r="70" fill="none"
+            stroke="#c9a84c" stroke-width="26" stroke-linecap="butt"
+            stroke-dasharray="0 439.82"
+            data-dash="175.93 439.82"
+            stroke-dashoffset="0"
+            transform="rotate(-90 100 100)"/>
+          <!-- Segment 2: Aave Lending 30% (#B6509E) — start=175.93, len=131.95, offset=439.82-175.93=263.89 -->
+          <circle class="donut-seg" cx="100" cy="100" r="70" fill="none"
+            stroke="#B6509E" stroke-width="26" stroke-linecap="butt"
+            stroke-dasharray="0 439.82"
+            data-dash="131.95 439.82"
+            stroke-dashoffset="263.89"
+            transform="rotate(-90 100 100)"/>
+          <!-- Segment 3: Morpho 20% (#4A90D9) — start=307.88, len=87.96, offset=439.82-307.88=131.94 -->
+          <circle class="donut-seg" cx="100" cy="100" r="70" fill="none"
+            stroke="#4A90D9" stroke-width="26" stroke-linecap="butt"
+            stroke-dasharray="0 439.82"
+            data-dash="87.96 439.82"
+            stroke-dashoffset="131.94"
+            transform="rotate(-90 100 100)"/>
+          <!-- Segment 4: Reserve 10% (#444) — start=395.84, len=43.98, offset=439.82-395.84=43.98 -->
+          <circle class="donut-seg" cx="100" cy="100" r="70" fill="none"
+            stroke="#444" stroke-width="26" stroke-linecap="butt"
+            stroke-dasharray="0 439.82"
+            data-dash="43.98 439.82"
+            stroke-dashoffset="43.98"
+            transform="rotate(-90 100 100)"/>
+          <!-- Center labels -->
+          <text x="100" y="94" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="19" font-weight="700" fill="#c9a84c">6–10%</text>
+          <text x="100" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#888">Target APY</text>
+        </svg>
+        <div class="donut-legend">
+          <div class="donut-legend-item"><span style="background:#c9a84c;"></span>Tokenized T-Bills<strong>40%</strong></div>
+          <div class="donut-legend-item"><span style="background:#B6509E;"></span>Aave Lending<strong>30%</strong></div>
+          <div class="donut-legend-item"><span style="background:#4A90D9;"></span>Morpho<strong>20%</strong></div>
+          <div class="donut-legend-item"><span style="background:#444;"></span>Reserve<strong>10%</strong></div>
         </div>
       </div>
     </div>
@@ -1190,6 +1493,68 @@
     </div>
   </div>
 </div>
+
+<!-- TREASURY DASHBOARD MOCKUP -->
+<section class="treasury-section">
+  <div class="section-tag">What Reporting Looks Like</div>
+  <h2 class="section-title">Full Transparency. Every Week.</h2>
+  <p class="section-sub" style="margin:0 auto;">Every deployed position is reported publicly on-chain. No black boxes. No excuses.</p>
+
+  <div class="treasury-panel">
+    <!-- Header -->
+    <div class="treasury-panel-header">
+      <div class="treasury-panel-title">AVC Treasury Report — Week 12</div>
+      <div class="treasury-live-badge">● Live</div>
+    </div>
+    <!-- Metrics -->
+    <div class="treasury-metrics">
+      <div class="treasury-metric-card">
+        <div class="treasury-metric-label">Total Deployed</div>
+        <div class="treasury-metric-value">$4.2M</div>
+      </div>
+      <div class="treasury-metric-card">
+        <div class="treasury-metric-label">Weekly Yield</div>
+        <div class="treasury-metric-value">$8,400</div>
+      </div>
+      <div class="treasury-metric-card">
+        <div class="treasury-metric-label">APY</div>
+        <div class="treasury-metric-value">10.4%</div>
+      </div>
+    </div>
+    <!-- Positions Table -->
+    <table class="treasury-table">
+      <thead>
+        <tr>
+          <th>Protocol / Asset</th>
+          <th>Deployed</th>
+          <th>APY</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ondo USDY</td>
+          <td class="td-amount">$1.68M</td>
+          <td class="td-apy">5.2% APY</td>
+          <td class="td-status">✓ Active</td>
+        </tr>
+        <tr>
+          <td>Aave v3 USDC</td>
+          <td class="td-amount">$1.26M</td>
+          <td class="td-apy">8.1% APY</td>
+          <td class="td-status">✓ Active</td>
+        </tr>
+        <tr>
+          <td>Morpho USDC</td>
+          <td class="td-amount">$840K</td>
+          <td class="td-apy">12.3% APY</td>
+          <td class="td-status">✓ Active</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="treasury-footer-note">Reports published on-chain every Monday. Viewable by any token holder.</div>
+  </div>
+</section>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
@@ -1219,67 +1584,209 @@
 </footer>
 
 <script>
-  // Hero particle animation
+  // ===== ENHANCEMENT 1: Network Graph Animation =====
   (function() {
-    var canvas = document.getElementById('heroCanvas');
+    var canvas = document.getElementById('network-canvas');
+    if (!canvas) return;
     var ctx = canvas.getContext('2d');
-    var particles = [];
-    var COUNT = 60;
+    var nodes = [];
+    var mouse = { x: -9999, y: -9999 };
+    var COUNT = 40;
+    var CONNECT_DIST = 180;
+    var ATTRACT_DIST = 160;
+    var ATTRACT_FORCE = 0.025;
+    var MAX_SPEED = 1.2;
 
     function resize() {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     }
 
-    function Particle() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.r = Math.random() * 2 + 1;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
-      this.alpha = Math.random() * 0.5 + 0.1;
+    function createNodes() {
+      nodes = [];
+      for (var i = 0; i < COUNT; i++) {
+        nodes.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          r: Math.random() * 1.5 + 1.5
+        });
+      }
     }
 
-    Particle.prototype.update = function() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x < -10) this.x = canvas.width + 10;
-      if (this.x > canvas.width + 10) this.x = -10;
-      if (this.y < -10) this.y = canvas.height + 10;
-      if (this.y > canvas.height + 10) this.y = -10;
-    };
+    function update() {
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        var dx = mouse.x - n.x;
+        var dy = mouse.y - n.y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < ATTRACT_DIST && dist > 1) {
+          n.vx += (dx / dist) * ATTRACT_FORCE;
+          n.vy += (dy / dist) * ATTRACT_FORCE;
+        }
+        n.vx *= 0.99;
+        n.vy *= 0.99;
+        var speed = Math.sqrt(n.vx * n.vx + n.vy * n.vy);
+        if (speed > MAX_SPEED) {
+          n.vx = (n.vx / speed) * MAX_SPEED;
+          n.vy = (n.vy / speed) * MAX_SPEED;
+        }
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < -20) n.x = canvas.width + 20;
+        if (n.x > canvas.width + 20) n.x = -20;
+        if (n.y < -20) n.y = canvas.height + 20;
+        if (n.y > canvas.height + 20) n.y = -20;
+      }
+    }
 
-    Particle.prototype.draw = function() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(201,168,76,' + this.alpha + ')';
-      ctx.fill();
-    };
-
-    function init() {
-      particles = [];
-      for (var i = 0; i < COUNT; i++) {
-        particles.push(new Particle());
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw connection lines
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var dx = nodes[j].x - nodes[i].x;
+          var dy = nodes[j].y - nodes[i].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < CONNECT_DIST) {
+            var alpha = (1 - dist / CONNECT_DIST) * 0.18;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = 'rgba(201,168,76,' + alpha + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+      // Draw nodes with glow
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        var grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 5);
+        grd.addColorStop(0, 'rgba(201,168,76,0.5)');
+        grd.addColorStop(1, 'rgba(201,168,76,0)');
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r * 5, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(201,168,76,0.7)';
+        ctx.fill();
       }
     }
 
     function loop() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (var i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-      }
+      update();
+      draw();
       requestAnimationFrame(loop);
     }
 
+    // Mouse tracking via hero element (canvas has pointer-events:none)
+    var hero = canvas.parentElement;
+    if (hero) {
+      hero.addEventListener('mousemove', function(e) {
+        var rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      hero.addEventListener('mouseleave', function() {
+        mouse.x = -9999; mouse.y = -9999;
+      });
+    }
+
     resize();
-    init();
+    createNodes();
     loop();
 
     window.addEventListener('resize', function() {
       resize();
-      init();
+      createNodes();
     });
+  })();
+
+  // ===== ENHANCEMENT 3: Animated Yield Counters =====
+  document.addEventListener('DOMContentLoaded', function() {
+    var statNums = document.querySelectorAll('.stat-num');
+    if (!statNums.length) return;
+
+    function easeOut(t) {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    function animateCount(el, from, to, duration, format) {
+      var startTime = null;
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var value = from + (to - from) * easeOut(progress);
+        el.textContent = format(value);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    function typewriter(el, text, duration) {
+      var chars = Array.from(text);
+      var i = 0;
+      var interval = duration / chars.length;
+      el.textContent = '';
+      var timer = setInterval(function() {
+        i++;
+        el.textContent = chars.slice(0, i).join('');
+        if (i >= chars.length) clearInterval(timer);
+      }, interval);
+    }
+
+    // [0] = $20B+
+    if (statNums[0]) {
+      animateCount(statNums[0], 0, 20, 2000, function(v) {
+        return '$' + Math.floor(v) + 'B+';
+      });
+    }
+    // [1] = <5%
+    if (statNums[1]) {
+      animateCount(statNums[1], 0, 5, 2000, function(v) {
+        return '<' + Math.floor(v) + '%';
+      });
+    }
+    // [2] = 6–12% typewriter
+    if (statNums[2]) {
+      typewriter(statNums[2], '6\u201312%', 1800);
+    }
+    // [3] = 0 (stays as is)
+  });
+
+  // ===== ENHANCEMENT 4: Donut Chart (IntersectionObserver) =====
+  (function() {
+    var chart = document.getElementById('donut-chart');
+    if (!chart) return;
+    var segs = chart.querySelectorAll('.donut-seg');
+    var animated = false;
+
+    function animateChart() {
+      if (animated) return;
+      animated = true;
+      segs.forEach(function(seg, i) {
+        setTimeout(function() {
+          var dash = seg.getAttribute('data-dash');
+          if (dash) seg.style.strokeDasharray = dash;
+        }, i * 180);
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          animateChart();
+          observer.disconnect();
+        }
+      }, { threshold: 0.3 });
+      observer.observe(chart);
+    } else {
+      animateChart();
+    }
   })();
 </script>
 
