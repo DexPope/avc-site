@@ -1598,8 +1598,9 @@
     var MAX_SPEED = 1.2;
 
     function resize() {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      var hero = canvas.parentElement;
+      canvas.width = hero.offsetWidth || window.innerWidth;
+      canvas.height = hero.offsetHeight || window.innerHeight;
     }
 
     function createNodes() {
