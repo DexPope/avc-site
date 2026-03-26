@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>August Venture Capital — On-Chain Treasury Management</title>
-<meta name="description" content="August Venture Capital manages digital asset treasuries for DAOs and blockchain protocols. We deploy idle capital into institutional-grade yield strategies.">
+<title>AVC — August Venture Capital | Onchain Treasury Intelligence</title>
+<meta name="description" content="AVC partners with DAOs and protocols to transform idle treasury assets into institutional-grade yield — transparently, non-custodially, and fully on-chain.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -38,7 +38,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    padding: 20px 60px;
+    padding: 16px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,15 +48,37 @@
   }
 
   .nav-logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
   }
 
-  .nav-logo span { color: var(--gold); }
+  .nav-logo-mark {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .nav-logo-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .nav-logo-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
 
   .nav-links {
     display: flex;
@@ -104,6 +126,13 @@
     overflow: hidden;
   }
 
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .hero::before {
     content: '';
     position: absolute;
@@ -112,6 +141,12 @@
     width: 800px; height: 800px;
     background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
     pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero > *:not(.hero-canvas) {
+    position: relative;
+    z-index: 1;
   }
 
   .hero-tag {
@@ -159,7 +194,7 @@
   .hero p {
     font-size: clamp(16px, 2vw, 20px);
     color: var(--muted);
-    max-width: 600px;
+    max-width: 620px;
     margin-bottom: 48px;
     line-height: 1.7;
   }
@@ -330,6 +365,70 @@
     gap: 6px;
   }
 
+  /* TARGET PROTOCOLS */
+  .protocols-section {
+    padding: 100px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .protocols-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .protocol-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .protocol-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+
+  .protocol-badge {
+    display: inline-block;
+    background: var(--gold-dim);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .protocol-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .protocol-treasury {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .protocol-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
   /* HOW IT WORKS */
   .how-section {
     background: var(--bg3);
@@ -441,6 +540,162 @@
     font-size: 13px;
     color: var(--muted);
     line-height: 1.6;
+  }
+
+  /* TEAM SECTION */
+  .team-section {
+    padding: 100px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .team-card-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  }
+
+  .team-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px 56px;
+    max-width: 560px;
+    width: 100%;
+    transition: border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .team-card:hover { border-color: var(--gold); }
+
+  .team-avatar {
+    width: 72px; height: 72px;
+    background: var(--gold-dim);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 auto 20px;
+  }
+
+  .team-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .team-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .team-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* RESEARCH SECTION */
+  .research-section-wrap {
+    background: var(--bg3);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 100px 0;
+  }
+
+  .research-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .research-card {
+    margin-top: 60px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    transition: border-color 0.3s;
+  }
+
+  .research-card:hover { border-color: var(--gold); }
+
+  .research-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold-dim);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .research-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .research-card p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  .research-arrow {
+    width: 56px; height: 56px;
+    background: var(--gold-dim);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--gold);
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .research-card:hover .research-arrow {
+    background: var(--gold);
+    color: #000;
   }
 
   /* ALLOCATION */
@@ -588,13 +843,28 @@
   }
 
   .footer-logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
-  .footer-logo span { color: var(--gold); }
+  .footer-logo-mark {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .footer-logo-mark span { color: var(--gold); }
+
+  .footer-logo-sub {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
 
   .footer-links {
     display: flex;
@@ -626,14 +896,24 @@
     .stat:last-child, .stat:nth-last-child(2):nth-child(odd) { border-bottom: none; }
     section { padding: 60px 24px; }
     .services-grid { grid-template-columns: 1fr; }
-    .how-inner, .allocation-inner { padding: 0 24px; }
+    .protocols-section { padding: 60px 24px; }
+    .protocols-grid { grid-template-columns: repeat(2, 1fr); }
+    .how-inner, .allocation-inner, .research-inner { padding: 0 24px; }
     .steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
     .steps::before { display: none; }
     .why-grid { grid-template-columns: 1fr; }
     .allocation-inner { grid-template-columns: 1fr; gap: 40px; }
     .cta-section { padding: 80px 24px; }
+    .team-section { padding: 60px 24px; }
+    .team-card { padding: 36px 28px; }
+    .research-card { grid-template-columns: 1fr; padding: 36px 28px; }
+    .research-arrow { display: none; }
     footer { flex-direction: column; gap: 20px; text-align: center; padding: 30px 24px; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  @media (max-width: 600px) {
+    .protocols-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -641,20 +921,26 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">August <span>Venture</span> Capital</a>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">AVC</div>
+    <div class="nav-logo-dot"></div>
+    <div class="nav-logo-tag">August Venture Capital</div>
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#protocols">Protocols</a></li>
     <li><a href="#how">How It Works</a></li>
-    <li><a href="#allocation">Strategy</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-tag">On-Chain Treasury Management</div>
-  <h1>Your Treasury<br>Should Be <span>Working</span>.</h1>
-  <p>August Venture Capital deploys idle DAO and protocol treasury assets into institutional-grade yield strategies — safely, transparently, and on-chain.</p>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-tag">On-Chain Treasury Intelligence</div>
+  <h1>Treasury Intelligence<br>for the <span>Onchain Economy</span></h1>
+  <p>AVC partners with DAOs and protocols to transform idle treasury assets into institutional-grade yield — transparently, non-custodially, and fully on-chain.</p>
   <div class="hero-btns">
     <a href="#contact" class="btn-primary">Request a Proposal</a>
     <a href="#how" class="btn-secondary">How It Works</a>
@@ -664,20 +950,20 @@
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat">
-    <div class="stat-num">$8B+</div>
-    <div class="stat-label">Idle DAO Treasury Capital</div>
+    <div class="stat-num">$20B+</div>
+    <div class="stat-label">Total DAO Treasury Assets</div>
   </div>
   <div class="stat">
-    <div class="stat-num">6–10%</div>
+    <div class="stat-num">&lt;5%</div>
+    <div class="stat-label">Professionally Managed</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">6–12%</div>
     <div class="stat-label">Target Annual Yield</div>
   </div>
   <div class="stat">
-    <div class="stat-num">100%</div>
-    <div class="stat-label">On-Chain Transparency</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">0%</div>
-    <div class="stat-label">Management Fee (Pilot)</div>
+    <div class="stat-num">0</div>
+    <div class="stat-label">Custody Risk (Non-Custodial)</div>
   </div>
 </div>
 
@@ -685,14 +971,14 @@
 <section id="services">
   <div class="section-tag">What We Do</div>
   <h2 class="section-title">Three Revenue<br>Streams. One Firm.</h2>
-  <p class="section-sub">We operate three integrated strategies designed to maximize yield on digital assets while maintaining institutional-grade risk controls.</p>
+  <p class="section-sub">AVC operates three integrated capital strategies — each designed to generate yield without requiring custody of your assets.</p>
 
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon">🏛️</div>
       <h3>DAO Treasury Management</h3>
       <p>We manage idle DAO treasuries — deploying capital across tokenized T-bills, DeFi lending protocols, and optimized yield strategies. Full on-chain transparency. Performance-based fees.</p>
-      <div class="service-return">↗ Target: 6–10% APY on managed assets</div>
+      <div class="service-return">↗ Target: 6–12% APY on managed assets</div>
     </div>
     <div class="service-card">
       <div class="service-icon">⚡</div>
@@ -705,6 +991,40 @@
       <h3>Real-World Asset Yield</h3>
       <p>We bridge institutional real-world yields — invoice factoring, trade finance, private credit — to on-chain capital pools. DeFi investors earn 9–11% APY. We capture the spread.</p>
       <div class="service-return">↗ Target: 4–6% spread on $10M+ pools</div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET PROTOCOLS -->
+<section class="protocols-section" id="protocols">
+  <div class="section-tag">Initial Coverage Universe</div>
+  <h2 class="section-title">Starting Where<br>the Capital Is.</h2>
+  <p class="section-sub">AVC's first engagement targets are protocols with large, idle treasuries and governance communities ready for institutional-grade yield management.</p>
+
+  <div class="protocols-grid">
+    <div class="protocol-card">
+      <div class="protocol-badge">DeFi Lending</div>
+      <h3>Compound Finance</h3>
+      <div class="protocol-treasury">~$600M</div>
+      <p>One of DeFi's oldest protocols with a large, largely idle treasury — and a governance community that has explored professional management.</p>
+    </div>
+    <div class="protocol-card">
+      <div class="protocol-badge">L2 Ecosystem</div>
+      <h3>Arbitrum DAO</h3>
+      <div class="protocol-treasury">~$3B</div>
+      <p>The largest L2 treasury in DeFi, with growing interest in sustainable yield generation to fund ecosystem grants and operations.</p>
+    </div>
+    <div class="protocol-card">
+      <div class="protocol-badge">DEX Protocol</div>
+      <h3>Uniswap DAO</h3>
+      <div class="protocol-treasury">~$3.5B</div>
+      <p>The world's leading DEX holds a massive UNI treasury with minimal yield — a prime candidate for diversified, non-custodial deployment.</p>
+    </div>
+    <div class="protocol-card">
+      <div class="protocol-badge">NFT / DAO</div>
+      <h3>Nouns DAO</h3>
+      <div class="protocol-treasury">~$50M</div>
+      <p>A high-profile, fully on-chain DAO with ETH-denominated treasury and an active governance culture aligned with transparent management.</p>
     </div>
   </div>
 </section>
@@ -743,7 +1063,7 @@
 
 <!-- WHY AVC -->
 <section>
-  <div class="section-tag">Why August Venture Capital</div>
+  <div class="section-tag">Why AVC</div>
   <h2 class="section-title">Built Different.</h2>
   <p class="section-sub">Most DAOs don't have a Goldman Sachs. We built one for the on-chain world.</p>
 
@@ -793,6 +1113,40 @@
   </div>
 </section>
 
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="section-tag">The Team</div>
+  <h2 class="section-title">Operator-Led.<br>Onchain-Native.</h2>
+  <p class="section-sub" style="margin: 0 auto;">We bring real-world operator discipline to onchain capital management — no theory, no fluff.</p>
+
+  <div class="team-card-wrap">
+    <div class="team-card">
+      <div class="team-avatar">RW</div>
+      <h3>Rich Winter</h3>
+      <div class="team-title">Founder &amp; Managing Partner</div>
+      <p>Founder of August Aisles LLC — a Houston-based operating company spanning AI automation, telehealth access, and pharmaceutical distribution. Bringing operator discipline to onchain capital management.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<div class="research-section-wrap" id="research">
+  <div class="research-inner">
+    <div class="section-tag">Research</div>
+    <h2 class="section-title">We Publish.<br>You Decide.</h2>
+    <p class="section-sub">AVC publishes original research on DAO treasury performance, yield opportunities, and capital strategy — open to the community.</p>
+
+    <div class="research-card">
+      <div class="research-left">
+        <div class="research-badge">Coming Soon — Q2 2026</div>
+        <h3>The $600M Problem: Why Compound Finance's Treasury Is Underperforming</h3>
+        <p>A deep dive into Compound's treasury composition, idle capital allocation, and the yield opportunity being left on the table — with a concrete proposal for what governance could do about it.</p>
+      </div>
+      <div class="research-arrow">→</div>
+    </div>
+  </div>
+</div>
+
 <!-- ALLOCATION STRATEGY -->
 <div class="allocation-section" id="allocation">
   <div class="allocation-inner">
@@ -827,7 +1181,7 @@
       <p>Our default allocation prioritizes capital preservation and predictable yield. The T-bill allocation provides a risk-free baseline backed by US government securities.</p>
       <p>Lending allocations are dynamically rebalanced to capture the highest risk-adjusted yield across Aave and Morpho — without exposing the treasury to smart contract concentration risk.</p>
       <div class="alloc-yield">
-        <span>6–10%</span>
+        <span>6–12%</span>
         <span>Blended APY<br>Target (Annual)</span>
       </div>
     </div>
@@ -847,15 +1201,84 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">August <span>Venture</span> Capital</div>
+  <div class="footer-logo">
+    <div class="footer-logo-mark">A<span>V</span>C</div>
+    <div class="footer-logo-sub">August Venture Capital — A division of August Aisles LLC</div>
+  </div>
   <ul class="footer-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#protocols">Protocols</a></li>
     <li><a href="#how">How It Works</a></li>
-    <li><a href="#allocation">Strategy</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="mailto:invest@augustventurecapital.io">Contact</a></li>
   </ul>
   <div class="footer-copy">© 2026 August Venture Capital — A division of August Aisles LLC</div>
 </footer>
+
+<script>
+  // Hero particle animation
+  (function() {
+    var canvas = document.getElementById('heroCanvas');
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var COUNT = 60;
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    function Particle() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.r = Math.random() * 2 + 1;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      this.alpha = Math.random() * 0.5 + 0.1;
+    }
+
+    Particle.prototype.update = function() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < -10) this.x = canvas.width + 10;
+      if (this.x > canvas.width + 10) this.x = -10;
+      if (this.y < -10) this.y = canvas.height + 10;
+      if (this.y > canvas.height + 10) this.y = -10;
+    };
+
+    Particle.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(201,168,76,' + this.alpha + ')';
+      ctx.fill();
+    };
+
+    function init() {
+      particles = [];
+      for (var i = 0; i < COUNT; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      requestAnimationFrame(loop);
+    }
+
+    resize();
+    init();
+    loop();
+
+    window.addEventListener('resize', function() {
+      resize();
+      init();
+    });
+  })();
+</script>
 
 </body>
 </html>
